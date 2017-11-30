@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from wine import LineClient
-from wine.LineApi import LineTracer
-from wine.LineThrift.ttypes import Message
-from wine.LineThrift.TalkService import Client
+from LineAlpha import LineClient
+from LineAlpha.LineApi import LineTracer
+from LineAlpha.LineThrift.ttypes import Message
+from LineAlpha.LineThrift.TalkService import Client
 import time, datetime, random ,sys, re, string, os, json, requests, urllib
 
 reload(sys)
@@ -125,17 +125,17 @@ def NOTIFIED_UPDATE_GROUP(op):
 
 tracer.addOpInterrupt(11,NOTIFIED_UPDATE_GROUP)
 
-def NOTIFIED_CANCEL_INVITATION_GROUP(op):
-    try:
-                sendMessage(op.param1, client.getContact(op.param2).displayName + ", โชคดีนะ แล้วพบกันใหม่ นะ\n (*´･ω･*) ")
+#def NOTIFIED_CANCEL_INVITATION_GROUP(op):
+#    try:
+#                sendMessage(op.param1, client.getContact(op.param2).displayName + ", โชคดีนะ แล้วพบกันใหม่ นะ\n (*´･ω･*) ")
 #                client.kickoutFromGroup(op.param1,[op.param2])
 #                client.inviteIntoGroup(op.param1,[op.param3])
-    except Exception as e:
-        print e
-        print ("\n\nNOTIFIED_CANCEL_INVITATION_GROUP\n\n")
-        return
-
-tracer.addOpInterrupt(32,NOTIFIED_CANCEL_INVITATION_GROUP)
+#    except Exception as e:
+#        print e
+#        print ("\n\nNOTIFIED_CANCEL_INVITATION_GROUP\n\n")
+#        return
+#
+#tracer.addOpInterrupt(32,NOTIFIED_CANCEL_INVITATION_GROUP)
 
 #def CANCEL_INVITATION_GROUP(op):
 #    try:
